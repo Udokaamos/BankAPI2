@@ -34,7 +34,7 @@ schema_view = get_schema_view(
 
       """,
       terms_of_service="",
-      contact=openapi.Contact(email="udokaamos@gmail.co.com"),
+      contact=openapi.Contact(email="udokaamos@gmail.com"),
       license=openapi.License(name="MIT License"),
 
       
