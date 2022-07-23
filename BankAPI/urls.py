@@ -25,10 +25,19 @@ schema_view = get_schema_view(
       title="Bank API",
       default_version='v1',
       description="""
-      This is a dummy description.""",
+      This is a Bank API with simple_JWT authentication.
+
+      Created by Gloria Durugo
+
+      Github : https://github.com/Udokaamos/BankAPI2
+      Linkin : https://www.linkedin.com/in/gloria-durugo/
+
+      """,
       terms_of_service="",
-      contact=openapi.Contact(email="gloryglow99@gmail.co.com"),
+      contact=openapi.Contact(email="udokaamos@gmail.co.com"),
       license=openapi.License(name="MIT License"),
+
+      
    ),
    public=True,
    permission_classes=[permissions.AllowAny],
