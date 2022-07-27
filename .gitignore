@@ -1,5 +1,7 @@
 *.env
 *.sqlite3
+dba4gm0fg99bon
+dba4gm0fg99bon-journal
 # __pycache__
 Pipfile
 
