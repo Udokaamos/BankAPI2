@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import django_heroku
 # import dj_database_url
 from dotenv import load_dotenv, find_dotenv
 
@@ -102,7 +103,11 @@ WSGI_APPLICATION = 'BankAPI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'dba4gm0fg99bon',
+        'USER': 'btbgojmiqgqgay',
+        'PASSWORD': 'bc828ca6b05db5efb63996eff2c19385b96e33503965ef6076dc99769ed5ae0b',
+        'HOST': 'ec2-54-208-104-27.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -145,7 +150,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+django_heroku.settings(locals())
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
