@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 # from pathlib import Path
 import django_heroku
+from datetime import timedelta
 # import dj_database_url
 from dotenv import load_dotenv, find_dotenv
 
@@ -37,19 +38,20 @@ ALLOWED_HOSTS = ['glow-bank-api.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+
     'account',
-    'transactions',
     'drf_yasg',
     'coreapi',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework_simplejwt',
+    'transactions',
 ]
 
 MIDDLEWARE = [
@@ -175,4 +177,11 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 
+}
+
+SIMPLE_JTW = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
 }
