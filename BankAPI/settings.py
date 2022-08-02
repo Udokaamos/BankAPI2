@@ -21,8 +21,8 @@ from datetime import timedelta
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # load_dotenv(find_dotenv())
 
@@ -93,12 +93,12 @@ WSGI_APPLICATION = 'BankAPI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -112,16 +112,16 @@ WSGI_APPLICATION = 'BankAPI.wsgi.application'
 #     )
 #   }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'dba4gm0fg99bon',
-        'USER': 'btbgojmiqgqgay',
-        'PASSWORD': 'bc828ca6b05db5efb63996eff2c19385b96e33503965ef6076dc99769ed5ae0b',
-        'HOST': 'ec2-54-208-104-27.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'dba4gm0fg99bon',
+#         'USER': 'btbgojmiqgqgay',
+#         'PASSWORD': 'bc828ca6b05db5efb63996eff2c19385b96e33503965ef6076dc99769ed5ae0b',
+#         'HOST': 'ec2-54-208-104-27.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
