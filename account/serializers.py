@@ -7,7 +7,7 @@ User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(max_length = 255, write_only=True)
-    account_balance = serializers.ReadOnlyField()
+    account_balance = serializers.FloatField()
     class Meta:
         model = User
         # fields = '__all__'
