@@ -165,19 +165,19 @@ def login_view(request):
 @swagger_auto_schema(methods=['PUT'] ,
                     request_body=UserSerializer())
 @api_view(['GET','PUT','DELETE'])
-@authentication_classes([BasicAuthentication])
+# @authentication_classes([BasicAuthentication])
 @permission_classes([IsAuthenticated])
-def profile_view(request):
+def profile_view(request, user_id):
 
-    # try:
-    #     user = User.objects.get(id=user_id)
-    # except User.DoesNotExist:
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
 
-    #     data = {
-    #         'message' : 'failed',
-    #         'error'  : f"User with ID {user_id} does not exist."
-    #     }
-    #     return Response(data, status=status.HTTP_404_NOT_FOUND)
+        data = {
+            'message' : 'failed',
+            'error'  : f"User with ID {user_id} does not exist."
+        }
+        return Response(data, status=status.HTTP_404_NOT_FOUND)
     user = request.user
     if request.method == "GET":
         serializer = UserSerializer(user)
