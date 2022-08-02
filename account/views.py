@@ -21,24 +21,6 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 User = get_user_model()
 
 
-
-@api_view(['GET'])
-def user_view(request):
-    
-    if request.method == 'GET':
-        # Get all the users in the database
-        all_users = User.objects.all()
-        
-        serializer = UserSerializer(all_users, many=True)
-        
-        data = {
-           "message":"successful",
-           "data": serializer.data
-        }
-    
-        return Response(data, status=status.HTTP_200_OK)
-
-
 @swagger_auto_schema(method='post', 
                     request_body=UserSerializer(),
                     operation_description="This is a function to create new users.",
@@ -73,6 +55,21 @@ def user_view(request):
                     }
 )
 
+@api_view(['GET'])
+def user_view(request):
+    
+    if request.method == 'GET':
+        # Get all the users in the database
+        all_users = User.objects.all()
+        
+        serializer = UserSerializer(all_users, many=True)
+        
+        data = {
+           "message":"successful",
+           "data": serializer.data
+        }
+    
+        return Response(data, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
