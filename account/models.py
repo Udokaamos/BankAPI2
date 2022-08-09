@@ -30,10 +30,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     branch = models.CharField(_('branch name'), max_length=100, blank=True)
     branch_address = models.CharField(('branch address'), max_length=250)
     date_created = models.DateTimeField(_('date created'), auto_now_add=True)
-    is_staff = models.BooleanField(_('staff'), default=True)
-    is_admin = models.BooleanField(_('admin'), default=True)
+    is_staff = models.BooleanField(_('staff'), default=False)
+    is_admin = models.BooleanField(_('admin'), default=False)
     is_superuser = models.BooleanField(_('superuser'), default=False)
-    is_active = models.BooleanField(_('active'), default=True)
+    is_active = models.BooleanField(_('active'), default=False)
    
 
     
