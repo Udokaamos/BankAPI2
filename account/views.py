@@ -119,6 +119,7 @@ def signup_view(request):
 
 @swagger_auto_schema(method='post', 
                     request_body=LoginSerializer())
+@authentication_classes([BasicAuthentication])
 @permission_classes([IsAuthenticated])
 @api_view(['POST'])
 def login_view(request):
@@ -162,7 +163,7 @@ def login_view(request):
 @swagger_auto_schema(methods=['PUT'] ,
                     request_body=UserSerializer())
 @api_view(['GET','PUT','DELETE'])
-# @authentication_classes([BasicAuthentication])
+@authentication_classes([BasicAuthentication])
 @permission_classes([IsAuthenticated])
 def profile_view(request, user_id):
 
