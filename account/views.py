@@ -119,8 +119,8 @@ def signup_view(request):
 
 @swagger_auto_schema(method='post', 
                     request_body=LoginSerializer())
-@authentication_classes([BasicAuthentication])
-# @permission_classes([IsAuthenticated])
+# @authentication_classes([BasicAuthentication])
+@permission_classes([IsAuthenticated])
 @api_view(['POST'])
 def login_view(request):
     
