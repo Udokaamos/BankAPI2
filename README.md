@@ -1,7 +1,7 @@
 ### BANKAPI
 
 BankAPI is a Banking App, where customers can open an account by signing up with their details.
-Customers can perform every operations on their account like Deposit, Tranfer and withdraw.
+Customers can perform every operations on their account like Deposit, Transfer and withdraw.
 
 - - -
 #### API ENDPOINTS
